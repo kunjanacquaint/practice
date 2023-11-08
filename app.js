@@ -1,7 +1,10 @@
  //import express module to create server
 const express =require('express')
 const dotenv=require('dotenv')
-
+require('./database/connection')
+const {Customer}=require('./database/customers.model')
+const customer= new Customer({name:"testing customer"})
+ customer.save().then((success)=>{console.log("Value inseted")})
 dotenv.config()// config .env file 
 const app=express()
 //#region test user endpoint

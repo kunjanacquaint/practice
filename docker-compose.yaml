@@ -1,8 +1,7 @@
 version: '3'
 services:
   web:
-    deploy:
-      replicas: 6
+   
     build:
       context: .
       dockerfile: Dockerfile
@@ -11,7 +10,7 @@ services:
     depends_on:
       - mongodb
   mongodb:
-    image: "mongo"
+    image: "mongo:latest"
     # ports:
     #   - "3100:27017"
     logging:
@@ -22,7 +21,7 @@ services:
     volumes:
       - mongo-data:/data/db
   nginx:
-    image: nginx
+    image: nginx:latest
     ports:
       - "8080:80"
     volumes:

@@ -1,12 +1,12 @@
-FROM python:20.9.0
-
+FROM node
 # set a directory for the app
 WORKDIR /usr/src/app
 
 # copy all the files to the container
 COPY . .
 
-# install dependencies
+# install   
+
 RUN npm install
 # define the port number the container should expose
 EXPOSE 5000

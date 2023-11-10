@@ -23,7 +23,7 @@ jobs:
       - name: Build and test
         run: |
           docker-compose build
-          docker-compose run your_application_name npm test
+          docker-compose run node_application npm test
 
   deploy:
     runs-on: ubuntu-latest
